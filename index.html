@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+
+  <!-- Immediate meta refresh redirect (works without JS) -->
+  <meta http-equiv="refresh" content="0; url=https://notemigrator.mgks.dev">
+
+  <script>
+    // Redundant redirect using JS
+    (function () {
+      var target = 'https://notemigrator.mgks.dev';
+
+      // Try redirect immediately
+      if (window.location.href !== target) {
+        window.location.replace(target); // doesn't leave history
+      }
+
+      // Fallback on load if initial fails
+      window.onload = function () {
+        if (window.location.href !== target) {
+          window.location.href = target; // just in case
+        }
+      };
+    })();
+  </script>
+</head>
+<body>
+  <noscript>
+    Redirecting... If you are not redirected, <a href="https://notemigrator.mgks.dev">click here</a>.
+  </noscript>
+</body>
+</html>
